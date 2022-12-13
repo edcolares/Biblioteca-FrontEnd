@@ -1,0 +1,14 @@
+.post-container h2 {
+  text-align: center;
+}
+
+.post-container .post {
+  border: none;
+}
+
+h3 {
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+}
