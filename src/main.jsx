@@ -45,6 +45,10 @@ const router = createBrowserRouter([
         path: "/livro/createAutor/:id",
         element: <NovoAutor />,
       },
+      {
+        path: "/autor/:id",
+        element: <EditarAutor />,
+      },
     ],
   },
 ]);
