@@ -38,7 +38,7 @@ const EditarLivro = () => {
       isbn, titulo, editora, ano_publicacao, status,
     }).then(() => { alert("Livro atualizado com sucesso!") });
 
-    navigate(`/livro/${ id }`);
+    navigate(`/livro/${id}`);
   };
 
   useEffect(() => {
