@@ -1,4 +1,4 @@
-import blogFetch from "../axios/config";
+import libFetch from "../axios/config";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -16,7 +16,7 @@ const NovoAutor = () => {
   const createAutor = async (e) => {
     e.preventDefault();
 
-    await blogFetch.post(`/livro/${id}/create`, {
+    await libFetch.post(`/livro/${id}/create`, {
       nome, pais_origem
     }).then(() => { alert("Autor incluído com sucesso!") });
 

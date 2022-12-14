@@ -1,4 +1,4 @@
-import blogFetch from "../axios/config";
+import libFetch from "../axios/config";
 
 import { useState, useEffect } from "react";
 
@@ -19,7 +19,7 @@ const Admin = () => {
 
   const getPosts = async () => {
     try {
-      const response = await blogFetch.get("/livro");
+      const response = await libFetch.get("/livro");
         console.log("Valor de response =>", response.data)
       const data = response.data;
 
@@ -30,7 +30,7 @@ const Admin = () => {
   };
 
   const deletePost = async (id) => {
-    await blogFetch.delete(`/livro/${id}`);
+    await libFetch.delete(`/livro/${id}`);
 
     const filteredPosts = posts.filter((post) => post.idlivro !== id);
 

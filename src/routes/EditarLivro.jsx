@@ -1,4 +1,4 @@
-import blogFetch from "../axios/config";
+import libFetch from "../axios/config";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./NovoLivro.css";
@@ -16,7 +16,7 @@ const EditarLivro = () => {
 
   const getLivro = async () => {
     try {
-      const response = await blogFetch.get(`/livro/${id}`);
+      const response = await libFetch.get(`/livro/${id}`);
       const data = response.data;
       console.log(data);
 
@@ -34,7 +34,7 @@ const EditarLivro = () => {
   const editPost = async (e) => {
     e.preventDefault();
     
-    await blogFetch.put(`/livro/${id}`, {
+    await libFetch.put(`/livro/${id}`, {
       isbn, titulo, editora, ano_publicacao, status,
     }).then(() => { alert("Livro atualizado com sucesso!") });
 

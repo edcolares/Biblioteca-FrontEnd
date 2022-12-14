@@ -1,4 +1,4 @@
-import blogFetch from "../axios/config";
+import libFetch from "../axios/config";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Home = () => {
 
   const getLivro = async () => {
     try {
-      const response = await blogFetch.get("/livro");
+      const response = await libFetch.get("/livro");
 
       const data = response.data;
 

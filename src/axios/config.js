@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const blogFetch = axios.create({
+const libFetch = axios.create({
   baseURL: "http://localhost:3001",
   headers: {
     "Content-Type": "application/json; charset=UTF-8",
@@ -8,4 +8,4 @@ const blogFetch = axios.create({
 });
 
 
-export default blogFetch;
+export default libFetch;

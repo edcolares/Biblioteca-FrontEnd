@@ -1,4 +1,4 @@
-import blogFetch from "../axios/config";
+import libFetch from "../axios/config";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ const Livro = () => {
 
   const getLivro = async () => {
     try {
-      const response = await blogFetch.get(`/livro/${id}`);
+      const response = await libFetch.get(`/livro/${id}`);
       const data = response.data;
 
       setLivro(data);
@@ -27,22 +27,22 @@ const Livro = () => {
 
   const deleteLivro = async (id) => {
     try {
-      await blogFetch.delete(`/livro/${id}`).then(() => { alert("Livro deletado com sucesso!") }).catch(error => { alert("Não foi possível excluir esse livro.", error) });
+      await libFetch.delete(`/livro/${id}`).then(() => { alert("Livro deletado com sucesso!") }).catch(error => { alert("Não foi possível excluir esse livro.", error) });
 
     } catch (error) {
       console.log(error);
     }
-    navigate("/");
+    navigate(`/`);
   };
 
   const deleteAutor = async (id) => {
     try {
-      const result = await blogFetch.delete(`/autor/${id}`).then(() => { alert("Autor deletado com sucesso!") }).catch(error => { alert("Não foi possível deletar o autor.", error) });
+      const result = await libFetch.delete(`/autor/${id}`).then(() => { alert("Autor deletado com sucesso!") }).catch(error => { alert("Não foi possível deletar o autor.", error) });
 
     } catch (error) {
       console.log(error);
     }
-    navigate("/");
+    navigate(`/`);
   };
 
 

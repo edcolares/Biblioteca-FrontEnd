@@ -6,10 +6,8 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import App from "./App";
 
 import Home from "./routes/Home";
-import Post from "./routes/Livro";
 import NovoLivro from "./routes/NovoLivro";
 import Admin from "./routes/Admin";
-import EditPost from "./routes/EditarLivro";
 import NovoAutor from "./routes/NovoAutor"
 
 import "./index.css";

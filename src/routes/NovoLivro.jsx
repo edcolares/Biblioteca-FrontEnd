@@ -1,9 +1,6 @@
-import blogFetch from "../axios/config";
-
+import libFetch from "../axios/config";
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 import "./NovoLivro.css";
 
 const NovoLivro = () => {
@@ -18,7 +15,7 @@ const NovoLivro = () => {
   const createLivro = async (e) => {
     e.preventDefault();
 
-    await blogFetch.post("/livro", {
+    await libFetch.post("/livro", {
       isbn, titulo, editora, ano_publicacao, status,
     }).then(() => { alert("Livro incluído com sucesso!") });
 
