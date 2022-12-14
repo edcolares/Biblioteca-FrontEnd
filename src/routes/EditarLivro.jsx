@@ -12,9 +12,6 @@ const EditarLivro = () => {
   const [ano_publicacao, setAnoPublicacao] = useState();
   const [status, setStatus] = useState();
 
-  const [title, setTitle] = useState();
-  const [body, setBody] = useState();
-
   const { id } = useParams();
 
   const getLivro = async () => {
@@ -41,7 +38,7 @@ const EditarLivro = () => {
       isbn, titulo, editora, ano_publicacao, status,
     }).then(() => { alert("Livro atualizado com sucesso!") });
 
-    navigate("/");
+    navigate(`/livro/${ id }`);
   };
 
   useEffect(() => {

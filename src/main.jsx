@@ -15,6 +15,7 @@ import NovoAutor from "./routes/NovoAutor"
 import "./index.css";
 import Livro from "./routes/Livro";
 import EditarLivro from "./routes/EditarLivro";
+import EditarAutor from "./routes/EditarAutor";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         element: <NovoLivro />,
       },
       {
+        path: "/livro/createAutor/:id",
+        element: <NovoAutor />,
+      },
+      {
         path: "/admin",
         element: <Admin />,
       },
@@ -42,9 +47,10 @@ const router = createBrowserRouter([
         element: <EditarLivro />,
       },
       {
-        path: "/livro/createAutor/:id",
-        element: <NovoAutor />,
+        path: "/autor/:id",
+        element: <EditarAutor />,
       },
+
     ],
   },
 ]);

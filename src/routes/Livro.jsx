@@ -71,11 +71,11 @@ const Livro = () => {
               livro.autores.map(autor => (
                 <div key={autor.idautor}>
                   <p>Nome: {autor.nome}
+                    <Link className="btnMini edit-btn" to={`/autor/${autor.idautor}`}>
+                      Atualizar
+                    </Link>
                     <Link className="btnMini delete-btn" onClick={() => deleteAutor(autor.idautor)}>
                       Deletar
-                    </Link>
-                    <Link className="btnMini edit-btn" to={`/${autor.idautor}`}>
-                      Atualizar
                     </Link>
                   </p>
                   <p>Pais de Origem: {autor.pais_origem}</p>
