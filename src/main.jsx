@@ -10,6 +10,7 @@ import Post from "./routes/Livro";
 import NovoLivro from "./routes/NovoLivro";
 import Admin from "./routes/Admin";
 import EditPost from "./routes/EditarLivro";
+import NovoAutor from "./routes/NovoAutor"
 
 import "./index.css";
 import Livro from "./routes/Livro";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/livro/editar/:id",
         element: <EditarLivro />,
+      },
+      {
+        path: "/livro/createAutor/:id",
+        element: <NovoAutor />,
       },
     ],
   },

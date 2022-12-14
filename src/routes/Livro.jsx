@@ -27,13 +27,24 @@ const Livro = () => {
 
   const deleteLivro = async (id) => {
     try {
-      const result = await blogFetch.delete(`/livro/${id}`).then(() => { alert("Livro deletado com sucesso!") }).catch(error => { alert("Não foi possível excluir esse livro.", error) });
+      await blogFetch.delete(`/livro/${id}`).then(() => { alert("Livro deletado com sucesso!") }).catch(error => { alert("Não foi possível excluir esse livro.", error) });
 
     } catch (error) {
       console.log(error);
     }
     navigate("/");
   };
+
+  const deleteAutor = async (id) => {
+    try {
+      const result = await blogFetch.delete(`/autor/${id}`).then(() => { alert("Autor deletado com sucesso!") }).catch(error => { alert("Não foi possível deletar o autor.", error) });
+
+    } catch (error) {
+      console.log(error);
+    }
+    navigate("/");
+  };
+
 
   useEffect(() => {
     getLivro();
@@ -51,16 +62,20 @@ const Livro = () => {
             <p>Editora: {livro.editora}</p>
             <p>Ano publicação: {livro.ano_publicacao}</p>
             <p>Status: {livro.status}</p>
-            <h3>Autores</h3>
+            <h3>Autores
+              <Link className="btnMini create-btn" to={`/livro/createAutor/${livro.idlivro}`}>
+                Incluir
+              </Link>
+            </h3>
             {
               livro.autores.map(autor => (
                 <div key={autor.idautor}>
                   <p>Nome: {autor.nome}
-                    <Link className="btnMini edit-btn" to={`/livro/editar/${livro.idlivro}`}>
-                      Atualizar
-                    </Link>
-                    <Link className="btnMini delete-btn" to={`/livro/editar/${livro.idlivro}`}>
+                    <Link className="btnMini delete-btn" onClick={() => deleteAutor(autor.idautor)}>
                       Deletar
+                    </Link>
+                    <Link className="btnMini edit-btn" to={`/${autor.idautor}`}>
+                      Atualizar
                     </Link>
                   </p>
                   <p>Pais de Origem: {autor.pais_origem}</p>
